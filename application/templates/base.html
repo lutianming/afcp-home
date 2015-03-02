@@ -1,48 +1,148 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-{% set bootstrap_version = '3.0.0' %}
-{% set modernizer_version = '2.6.2' %}
-{% set jquery_version = '1.9.1' %}
-{% set parsley_version = '1.1.16' %}
-{% set awesome_version = '4.0.1' %}
-{% set bootswatch_version = '3.0.0' %}
-{% set bootswatch_theme = 'cyborg' %}
+    {% set bootstrap_version = '3.0.0' %}
+    {% set modernizer_version = '2.6.2' %}
+    {% set jquery_version = '1.9.1' %}
+    {% set parsley_version = '1.1.16' %}
+    {% set awesome_version = '4.0.1' %}
+    {% set bootswatch_version = '3.0.0' %}
+    {% set bootswatch_theme = 'cyborg' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-    <title>{% block title%}Flask on App Engine{% endblock %}</title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/{{ bootstrap_version }}/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/{{ awesome_version }}/css/font-awesome.min.css" rel="stylesheet" >
-    <link href="//netdna.bootstrapcdn.com/bootswatch/{{ bootswatch_version }}/{{ bootswatch_theme }}/bootstrap.min.css" rel="stylesheet" >
-    <style>  </style> <!-- Bootstrap -->
-    <link href="/static/css/main.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="/static/img/favicon.ico" />
-    {% block style_block %}{# page-specific CSS #}{% endblock %}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/{{ modernizer_version }}/modernizr.min.js"></script>{# Modernizr must be here, above body tag. #}
-    {% block head_script %}{# defer-incapable JS block #}{% endblock %}
-</head>
-<body>
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<title>{% block title%}AFCP{% endblock %}</title>
 
-        {% include 'includes/nav.html' %} {# pull in navbar #}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/{{ jquery_version }}/jquery.min.js"></script>
 
-    <div class="container" id="maincontent">
-        {% include 'includes/flash_message.html' %} {# page-level feedback notices #}
-        <div id="body_content">
-            {% block content %}{# main content area #}{% endblock %}
-        </div>
-    </div><!-- /container -->
-    <footer>
-        <div id="footer" class="container">
-            {% block footer %}{% endblock %}
-        </div><!-- /footer -->
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{ jquery_version }}/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/{{ bootstrap_version }}/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/{{ parsley_version }}/parsley-standalone.min.js"></script>
-    <script src="/static/js/main.js"></script>
-    {% block tail_script %}{# defer-capable JS block #}{% endblock %}
-    {{ profiler_includes|safe }}
-</body>
+	{#
+	<script src="//netdna.bootstrapcdn.com/bootstrap/{{ bootstrap_version }}/js/bootstrap.min.js"></script>
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/{{ bootstrap_version }}/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/{{ awesome_version }}/css/font-awesome.min.css" rel="stylesheet" >
+	<link href="//netdna.bootstrapcdn.com/bootswatch/{{ bootswatch_version }}/{{ bootswatch_theme }}/bootstrap.min.css" rel="stylesheet" >
+	<style>  </style> <!-- Bootstrap -->
+	<link href="/static/css/main.css" rel="stylesheet" />
+	<link rel="shortcut icon" href="/static/img/favicon.ico" />
+	#}
+	{% block style_block %}{# page-specific CSS #}{% endblock %}
+	{#
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/{{ modernizer_version }}/modernizr.min.js"></script>
+	#}
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}"/>
+	{% block html_head%}{% endblock %}
+	{% block head_script %}{# defer-incapable JS block #}{% endblock %}
+    </head>
+    <body>
+
+	<div id="outer-wrapper">
+
+	    <div id="topbar-wrapper">
+
+		<div class="logo">
+		    <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='img/afcp_logo.jpg') }}" alt="AFCP Logo"/></a>
+		</div><!--/.logo-->
+
+		<div class="links">
+		    {#
+		    {% if user_ %}
+		    {{ user_.email }}
+		    | <a href="/members/my_profile/">Mon Profile</a>
+		    | <a href="{{ log_url_ }}">Logout</a>
+		    {% else %}
+		    Bienvenue!
+		    | <a href="{{ log_url_ }}">Login</a>
+		    {% endif %}
+		    {% if is_admin_ %}
+		    | <a href="/admin/">Admin</a>
+		    {% endif %}
+		    |
+		    #}
+		    {% for locale in LOCALES %}
+			<a href="{{ url_for('setlocale', locale=locale) }}">
+			    <img src="/static/img/lang_{{ locale }}.gif">
+			    </img>
+			</a>
+		    {% endfor %}
+
+
+		    <br />
+
+		    <a href="{{ url_for('home') }}">Home</a> |
+		    <a href="{{ url_for('about') }}">AFCP</a> |
+		    <a href="http://www.forumhorizonchine.com" target="_blank">Forum</a> |
+		    <a href="{{ url_for('news') }}">Nouvelles</a> |
+		    <a href="{{ url_for('amusement') }}">Loisirs</a> |
+		    <a href="{{ url_for('research') }}">Research</a> |
+		    <a href="{{ url_for('afcpchine') }}">AFCP Chine</a> |
+		    <a href="{{ url_for('misc') }}">Divers</a> |
+		    <a href="{{ url_for('contact') }}">Contact</a>
+
+		</div><!--/.links-->
+
+	    </div><!--/#topbar-wrapper-->
+
+	    <div id="header-wrapper">
+		{% block header %}FIXME: header block{% endblock %}
+	    </div><!--/#header-wrapper-->
+
+	    <div id="navbar-wrapper">
+		{% block navbar %}{% endblock %}
+	    </div><!--/#navbar-wrapper-->
+
+	    <div id="sidebar-and-content-wrapper" class="container">
+
+		{% block sidebar_and_content %}
+
+		    <div id="sidebar-wrapper">
+			{% block sidebar %}
+			    {% include "includes/sidebar.html" %}
+			{% endblock %}
+		    </div><!--/#sidebar-wrapper-->
+
+		    <div id="content-wrapper">
+			<a id="top"></a>
+			{% block content %}FIXME: content block{% endblock %}
+			<div class="section-footer">
+			    <p class="hide"><a href="#top">Retour</a></p>
+			</div>
+		    </div><!--/#content-wrapper-->
+
+		{% endblock %}{# sidebar_and_content #}
+
+	    </div><!--/#sidebar-and-content-wrapper-->
+	    <div id="footer-wrapper" class="container">
+
+		<a href="/afcp/">Home</a> |
+		<a href="/afcp/amusement/">Planet AFCP</a> |
+		<a href="/afcp/static/about/">About AFCP</a> |
+		<a href="/afcp/static/contact/">Contact Us</a> |
+
+
+		{% for locale in LOCALES %}
+		    <a href="{{ url_for('setlocale', locale=locale) }}">
+			<img src="/static/img/lang_{{ locale }}.gif">
+			</img>
+		    </a>
+		{% endfor %}
+
+
+		<br/>
+
+		<a href="http://www.zhengzhong.net/" rel="external">Thanks</a> |
+		<a href="http://validator.w3.org/check?uri=referer" rel="external">Valid XHTML 1.0!</a> |
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external">Valid CSS!</a>
+
+      		<div class="clear"></div>
+	    </div><!--/#footer-wrapper-->
+
+	</div><!--/#outer-wrapper-->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/{{ parsley_version }}/parsley-standalone.min.js"></script>
+	<script src="/static/js/main.js"></script>
+	{% block tail_script %}{# defer-capable JS block #}{% endblock %}
+	{{ profiler_includes|safe }}
+    </body>
 </html>

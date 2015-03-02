@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block html_head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block content %}
+{% endblock %}{# content #}
+{#------------------------------------------------------------------------------------------------#}
+
+{% block sidebar %}
+
+<div class="sidebar-section">
+  <div class="title">Divers</div>
+  <ul class="list">
+    <li {% if request.endpoint == "nuitdechine" %}class="current"{% endif %}><a href="{{ url_for('nuitdechine') }}">Nuit de Chine</a></li>
+    <li {% if request.endpoint == "itineraire_x" %}class="current"{% endif %}><a href="{{ url_for('itineraire_x') }}">Itinéraire vers l'X</a></li>
+    <li {% if request.endpoint == "seminaire" %}class="current"{% endif %}><a href="{{ url_for('seminaire') }}">Séminaire</a></li>
+    <li {% if request.endpoint == "roundtable" %}class="current"{% endif %}><a href="{{ url_for('roundtable') }}">Round Table</a></li>
+  </ul>
+</div>
+
+
+{% endblock %}{# sidebar #}
+
+
+
+
+

@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% block title %}
+    AFCP Accueil
+{% endblock title %}
+
+{% block html_head %}
+
+    <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='css/home.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/block.css') }}" />
+
+{% endblock %}
+
+{% block header %}
+    {% set header = url_for('static', filename="img/header_gala2014.jpg") %}
+
+    <div title="Page du Gala de la Lune" class="banner-image" style="background: url('/static/img/header_gala2014.jpg') no-repeat center">
+	<!-- <a class="subscribe" target="_blank" href="http://form.jotformpro.com/form/32573239309962">Inscrivez-vous !</a> -->
+    </div>
+{% endblock %}{# header #}
+
+{% block sidebar_and_content %}
+
+    <div id="home-wrapper" class="container">
+
+	<div id="left-column">
+
+	    <div id="announcements" class="block">
+		<div class="block-title">
+		    <a href="/afcp/static/about/"> "À propos de l'AFCP"</a>
+		</div>
+
+		<p>
+		    <strong>L’Association amicale Franco Chinoise de Paristech
+			(AFCP) </strong>a pour objectif général de promouvoir les échanges
+		    scolaires, professionnels et culturels entre les deux pays, afin de
+		    renforcer le lien amical franco-chinois.
+		</p>
+		<p>Notre association est ouverte à tous les étudiants en cours de
+		    cursus ou déjà diplômés des Grandes Ecoles membres de Paris Tech,
+		    tout particulièrement les étudiants chinois et les étudiants
+		    français qui se rendent en Chine pour y poursuivre leurs études, y
+		    effectuer des stages ou y travailler... </p>
+
+		<div class="block-footer">
+		    <a href="/afcp/static/about/">"Details de l'AFCP"</a>
+		</div>
+
+	    </div>
+	    <!--/#announcements-->
+
+	    <div id="ecoles" class="block">
+		<div class="block-title">"Les activités de l'AFCP"</div>
+
+
+		<h3>Table ronde</h3>
+		<p>
+		    Une table ronde d'échange entre les élèves et anciens élèves de
+		    ParisTech est organisée par l'AFCP. Pour plus de détail, rendez-vous
+		    <a href="/afcp/misc/roundtable/">sur la page de présentation
+			(en chinois)</a>.
+		</p>
+
+
+
+		<div class="block-footer">
+		    <a href="/afcp/static/about/activities/">
+			"Plus d'activités"</a>
+		</div>
+
+		<h3>Assemblée Générale 2014</h3>
+		<p>
+		    Assemblée Générale 2014 de l’Association amicale Franco-Chinoise de ParisTech.
+		    Rendez-vous sur <a href="/afcp/news">la page de detail</p>.
+		</p>
+		
+	    </div>
+
+	</div>
+	<!--/#left-column-->
+
+	<!-- right column //////////////////////////////////////////////////////////////////////////// -->
+
+	<div id="right-column">
+
+	    <!-- <div id="planet" class="block">
+	    <div class="block-title">
+	    <a href="http://afcp-paristech.blogspot.com/">
+	    "Dernières nouvelles du blog de l'AFCP" %}</a>
+	    </div>
+	    <div id="feeds"></div>
+	    <div class="block-footer">
+	    <a href="/afcp/news/">Plus nouvelles</a>
+	    </div>
+	    </div> -->
+	    <!--/#feeds-->
+
+	    <div id="link" class="block">
+		<div class="block-title">AFCP Links</div>
+		<div id="links">
+		    <table style="background-color: #fff; padding: 5px;" cellspacing=0>
+			<tr>
+			    <td><h2 style="margin-top: 8px; margin-bottom: 8px;">
+				<a href="http://www.paristech.fr/" class="externel" title="巴黎高科">ParisTech</a>
+			    </h2></td>
+			    <td><img style="margin-left: 25px;"
+				     src="{{ url_for('static', filename='img/pt.gif') }}" /></td>
+			</tr>
+			<tr>
+			    <td><h2 style="margin-top: 8px; margin-bottom: 8px;">
+				<a href="http://www.tongji-france.com" class="externel"
+				   title="法国同济校友会">ATF</a>
+			    </h2></td>
+			    <td><img style="margin-left: 25px;"
+				     src="{{ url_for('static', filename='img/tj.jpg') }}" /></td>
+			</tr>
+			<tr>
+			    <td><h2 style="margin-top: 8px; margin-bottom: 8px;">
+				<a href="http://www.midlandoverseas.com/" class="externel"
+				   title="中原海外：协助中国企业的海外发展">Midland Overseas</a>
+			    </h2></td>
+			    <td><img style="margin-left: 25px;"
+				     src="{{ url_for('static', filename='img/midland_overseas_3.jpg') }}" /></td>
+			</tr>
+		    </table>
+
+		</div>
+		<!--
+		<div class="block-footer">
+		<a href="/afcp/news/">Plus links</a>
+		</div>
+		-->
+	    </div>
+
+	    <div id="group" class="block">
+		<div class="block-title">AFCP Groups</div>
+		<div id="group">
+		    <table style="background-color: #fff; padding: 5px;" cellspacing=0>
+			<tr>
+
+			    <td><img
+				src="http://groups.google.fr/intl/fr/images/logos/groups_logo_sm.gif"
+height=30 width=151 alt="Google Groupes"></td>
+			    
+			</tr>
+			<tr>
+			    <td>
+				<h2>
+				    <a href="http://groups.google.fr/group/afcpfreechat?hl=en">AFCP
+					Free Chat</a>
+				</h2>
+				<h2>
+				    <a href="http://groups.google.fr/group/afcpcom?hl=en">AFCP
+					Communication</a>
+				</h2>
+			    </td>
+		    </table>
+		</div>
+
+		<!--
+		<div class="block-footer">
+		<a href="/afcp/news/">Plus links</a>
+		</div>
+		-->
+	    </div>
+
+
+	</div>
+	<!--/#right-column-->
+
+    </div>
+    <!--/#home-wrapper-->
+
+
+{% endblock %}{# sidebar_and_content #}

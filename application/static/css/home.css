@@ -1,0 +1,146 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Stylesheet for AFCP home page.
+ 
+ Created on 2008-11-19.
+ $Id: home.css 26 2009-08-04 22:06:00Z guolin.mobi $
+ */
+
+/*------------------------------------------------------------------------------------------------*/
+/* AFCP home page layout                                                                          */
+/*------------------------------------------------------------------------------------------------*/
+
+#home-wrapper #left-column {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  float: left;
+  width: 420px;
+}
+
+#home-wrapper #right-column {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  float: right;
+  width: 420px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* AFCP home page banner image                                                                    */
+/*------------------------------------------------------------------------------------------------*/
+
+#header-wrapper {
+	margin: 0 0 10px 0;
+	padding: 0;
+	width: 900px;
+	height: 255px;
+	background: #888888;/* url("{{ static_ }}/afcp/images/{{ banner_image.id }}.jpg") no-repeat
+		top */
+	border-width: 4px 0 4px 0;
+	border-style: solid;
+	border-color: #888888;
+	cursor: pointer;
+}
+
+/* .banner-image span.banner-img {
+	display: block;
+	width: 900px;
+	height: 270px;
+} */
+
+.banner-image {
+	/*margin: 230px 10px 0 0;*/
+	padding: 0;
+	font: normal normal 100% 'Trebuchet MS', arial, sans-serif;
+	color: #888888;
+	text-align: right;
+	height: 255px;
+	overflow: auto;
+}
+
+.banner-image a {
+  color: #888888;
+}
+
+/* .button-container {
+	padding-left: 280px;
+	padding-top:100px;
+} */
+.banner-image a.subscribe {
+	display: block;
+	width: 140px;
+	text-align: center;
+	margin: 2px 0 0 420px;
+	padding: 10px 10px;
+	font-size: large;
+	border-radius: 4px;
+	-moz-transition: all 500ms;
+	-webkit-transition: all 500ms;
+	-ms-transition: all 500ms;
+	-o-transition: all 500ms;
+	transition: all 500ms;
+	font-weight: bold;
+	/* border: solid 2px #9b1614;
+	background-color: #b51a18;
+	color: #EEE; */
+	border: solid 1px #6e936e;
+	background-color: #caec8d;
+	color: #4f6228;
+}
+.banner-image a.subscribe:hover {
+	text-decoration: none;
+	/* background-color: #df1714; */
+	border-color: #4f6a4f;
+	background-color: #daf1ae;
+	box-shadow: 1px 1px 2px #779977;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* AFCP home page center navbar                                                                   */
+/*------------------------------------------------------------------------------------------------*/
+
+.center-navbar {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.center-navbar .navbar-entry {
+  margin: 0;
+  padding: 0 10px 0 10px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* AFCP forum page                                                                                */
+/*------------------------------------------------------------------------------------------------*/
+
+/* .main-title {
+  margin: 0 0 8px 0;
+  padding: 4px 0 4px 0;
+  font: normal bold 140% 'Trebuchet MS',arial,sans-serif;
+  color: #444444;
+  line-height: 1.4em;
+  border-bottom: 1px solid #888888;
+  text-align: center;
+} */
+
+#announcements img {
+	margin-top: 1.9em;
+	margin-bottom: 14.4px;
+}
+
+.fixme {
+	color: red;
+	font-style: italic;
+}
+
+.modified {
+	color: blue;
+	font-style: italic;
+}
+
+

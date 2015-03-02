@@ -16,8 +16,22 @@ class Config(object):
     CSRF_SESSION_KEY = SESSION_KEY
     # Flask-Cache settings
     CACHE_TYPE = 'gaememcached'
-
-
+    LANGUAGES = {'en': ('English'), 'fr': ('French'), 'zh': ('Chinese')}
+    ADMIN = ['lutianming1005@gmail.com']
+    CONTACT = ['ZHU Qi <realzhq@gmail.com>',
+               'ZHANG Nan <nan.zhann@gmail.com>',
+               'DENG Ken <dengken524@live.cn>',
+               'ZHU Tong <zhutong0114@gmail.com>',
+               'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>',
+               'Tianming LU <lutianming1005@gmail.com>']
+    CC = ['ZHU Qi <realzhq@gmail.com>',
+          'ZHANG Nan <nan.zhann@gmail.com>',
+          'DENG Ken <dengken524@live.cn>',
+          'ZHU Tong <zhutong0114@gmail.com>',
+          'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>',
+          'Tianming LU <lutianming1005@gmail.com>']
+    SENDER = 'AFCP <admin@afcp-paristech.com>'
+   
 class Development(Config):
     DEBUG = True
     # Flask-DebugToolbar settings

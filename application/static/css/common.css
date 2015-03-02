@@ -1,0 +1,260 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Common stylesheet for the AFCP webapp.
+ 
+ Created on 2008-10-28.
+ $Id: common.css 26 2009-08-04 22:06:00Z guolin.mobi $
+ */
+
+/*------------------------------------------------------------------------------------------------*/
+/* HTML element styles                                                                            */
+/*------------------------------------------------------------------------------------------------*/
+
+body {
+  font: normal normal 90% arial,sans-serif;
+  color: #444444;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: #2090D0;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #2090D0;
+}
+
+a img {
+  border-width: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Trebuchet MS',arial,sans-serif;
+}
+
+code, pre {
+  font-family: 'Courier New',courier,arial, sans-serif;
+  font-size: 90%;
+  color: #444444;
+}
+
+pre {
+  margin: 0;
+  padding: 0.5em;
+  border: solid 1px #888888;
+}
+
+small {
+  font-size: 90%;
+}
+
+big {
+  font-size: 110%;
+}
+
+.clear {
+  clear: both;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* Page layout and wrapper styles                                                                 */
+/*------------------------------------------------------------------------------------------------*/
+
+#outer-wrapper {
+  text-align: left;
+  margin: 20px auto;
+  padding: 0;
+  width: 900px;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+}
+
+#topbar-wrapper,
+#footer-wrapper {
+  margin: 0;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+}
+
+#topbar-wrapper {
+  height: 50px;
+  padding: 20px 20px 10px 20px;
+}
+
+#topbar-wrapper:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+#topbar-wrapper .logo {
+  float: left;
+}
+
+#topbar-wrapper .links {
+  float: right;
+  text-align: right;
+  white-space: nowrap;
+  line-height: 1.4em;
+}
+
+#footer-wrapper {
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  color: #888888;
+  border-top: 1px solid #DDDDDD;
+}
+
+#footer-wrapper a {
+  color: #888888;
+}
+
+#header-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+#header-wrapper .title {
+  font: normal bold 160% 'Trebuchet MS',arial,sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header-wrapper .subtitle {
+  font: italic normal 110% 'Trebuchet MS',arial,sans-serif;
+  margin: 0;
+  padding: 2px 0 0 0;
+}
+
+#navbar-wrapper {
+  margin: 0;
+  padding: 0 20px 0 20px;
+}
+
+#sidebar-and-content-wrapper {
+  text-align: left;
+  margin: 0;
+  padding: 0 20px 10px 20px;
+}
+
+#sidebar-wrapper {
+  display: inline;
+  float: left;
+  width: 160px;
+  text-align: left;
+  margin: 0;
+  padding: 0 5px 0 0;
+}
+
+#content-wrapper {
+  display: inline;
+  float: right;
+  width: 670px;
+  text-align: left;
+  margin: 0;
+  padding: 0 0 0 5px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* Common CSS classes                                                                             */
+/*------------------------------------------------------------------------------------------------*/
+
+.hidden {
+  /* display: none; */
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.hr {
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #888888;
+}
+
+.head-row td {
+  margin: 0;
+  padding: 4px;
+  font-family: 'Trebuchet MS',arial,sans-serif;
+  font-weight: bold;
+  background-color: #DDDDDD;
+}
+
+.odd-row td, .even-row  td, .plain-row td {
+  margin: 0;
+  padding: 4px;
+}
+
+.odd-row, .plain-row {
+  background-color: #FFFFFF;
+}
+
+.even-row {
+  background-color: #EEEEEE;
+}
+
+.container {
+  height: 1%; /* IE requires this! */
+}
+
+.container:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.bordered {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #888888;
+}
+
+.noborder {
+  border-width: 0;
+  border-style: none;
+}
+
+.info, .error, .message {
+  margin: 4px 0 4px 0;
+  padding: 10px;
+}
+
+.info {
+  background-color: #E8EEFA;
+  border: 1px solid #C3D9FF;
+}
+
+.error {
+  background-color: #FAFDCE;
+  border: 1px solid #FACC00
+}
+
+table.withborder {
+	border-collapse: collapse;
+}
+
+table.withborder th, table.withborder td {
+	border: solid 1px gray;
+	padding: 2px 5px;
+}
+
+

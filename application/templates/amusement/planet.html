@@ -1,0 +1,93 @@
+{% extends "afcp/amusement/amusement.html" %}
+{% comment %}
+<!--
+  Created on 2008-11-18.
+  $Id: planet.html 28 2009-08-09 00:02:26Z guolin.mobi $
+-->
+{% endcomment %}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block html_head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="{{ static_ }}/stylesheets/planet.css"/>
+
+<title>Planet AFCP</title>
+
+{% include "utils/google_ajax_feed_api.html" %}
+{% include "utils/feeds_aggregator.html" %}
+
+<script type="text/javascript">//<![CDATA[
+
+function initialize() {
+    var aggregator = new FeedsAggregator();
+    {% for feed in feeds %}
+        aggregator.addFeed("{{ feed.feed_link }}");
+    {% endfor %}
+	aggregator.showEntries = 20;
+    aggregator.feedsNodeId = "feeds";
+    aggregator.loadAndRender();
+}
+
+$(document).ready( function() { initialize(); } );
+
+
+//]]></script>
+
+
+
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block content %}
+
+<div id="planet-header">
+  <p>
+	  <b>Planet AFCP</b>是一个博客 RSS 聚集器。这里收集了一些朋友的博客。若是你想加入到 <b>Planet AFCP</b>，和更多的人共享你的博客，可以联系网站的管理员。
+  </p>
+
+
+</div><!--/#planet-header-->
+
+<div id="planet-content" class="container">
+
+  <div id="left-column">
+  
+    <div id="planet-feeds" class="section">
+      <h2>最新文章</h2>
+      <div id="feeds"></div>
+    </div><!--/#planet-feeds-->
+  
+  </div><!--/#left-column-->
+  
+  <div id="right-column">
+  
+    <div id="planet-members" class="section">
+      <h2>Planet 成员</h2>
+      {% for feed in feeds %}
+        <div class="entry">
+          <div class="entry-title">
+            <a href="{{ feed.site_link }}" rel="external">{{ feed.site_name|escape }}</a>
+          </div>
+          <div class="entry-info">
+            From {{ feed.author }}.
+          </div>
+        </div><!--/.entry-->
+      {% endfor %}
+    </div><!--/#planet-members-->
+  
+  </div><!--/#right-column-->
+
+</div><!--/#planet-content-->
+
+{% endblock %}{# sidebar_and_content #}
+
+
+
+

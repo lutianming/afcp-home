@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}FIXME::AFCP{% endblock %}
+
+{% block html_head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block content %}
+{% endblock %}{# content #}
+{#------------------------------------------------------------------------------------------------#}
+
+{% block sidebar %}
+
+<div class="sidebar-section">
+  <div class="title">AFCP Research</div>
+  <ul class="list">
+    <li {% if request.endpoint == "presentation" %}class="current"{% endif %}><a href="{{ url_for('presentation') }}">Presentation</a></li>
+    <li {% if request.endpoint == "training" %}class="current"{% endif %}><a href="{{ url_for('training') }}">PPT+Excel Training</a></li>
+    <li {% if request.endpoint == "workpermit" %}class="current"{% endif %}><a href="{{ url_for('workpermit') }}">Working Permit</a></li>
+    <li {% if request.endpoint == "alumni" %}class="current"{% endif %}><a href="{{ url_for('alumni_research') }}">Alumni Research 2014</a></li>
+  </ul>
+</div>
+
+
+{% endblock %}{# sidebar #}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block html_title %}nous{% endblock %}
+
+{% block html_head %}
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+
+    <script>
+     function markCurrentEntry() {
+	 $("#entry_{{ request.endpoint }}").addClass("current");
+     };
+     $(document).ready( function() { markCurrentEntry(); } );
+    </script>
+
+{% endblock %}{# html_head #}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{% block content %}
+{% endblock %}{# content #}
+
+{% block sidebar %}
+
+    <div class="sidebar-section">
+	<div class="title" >À propos de l'AFCP</div>
+	<ul class="list">
+	    <li id="entry_us">
+		<a href="{{ url_for('us') }}">Qui sommes-nous ?</a>
+	    </li>
+	    <li id="entry_paristech">
+		<a href="{{ url_for('paristech') }}">Qui est ParisTech ?</a>
+	    </li>
+	    <li id="entry_paristechchine">
+		<a href="{{ url_for('paristechchine') }}">ParisTech en Chine</a>
+	    </li>
+	    <li id="entry_activities">
+		<a href="{{ url_for('activities') }}">Nos activités</a>
+	    </li>
+	    <li id="entry_bureau">
+		<a href="{{ url_for('bureau') }}">AFCP Bureau 2014</a>
+	    </li>
+	    <li id="entry_candidature">
+		<a href="{{ url_for('candidates') }}">Candidature d'élection 2014</a>
+	    </li>
+	</ul>
+    </div>
+
+{% endblock %}{# sidebar #}
+
+
+
+
+

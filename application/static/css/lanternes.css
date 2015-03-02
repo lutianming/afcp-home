@@ -1,0 +1,17 @@
+a.registerlink {
+	display: block;
+	color: #444;
+	font-weight: bold;
+	background-color: #e7edff;
+	text-align: center;
+	padding: 0.5em 0;
+	border-radius: 3px;
+}
+a.registerlink:hover {
+	background-color: #dde5ff;
+	color: #222;
+	text-decoration: none;
+}
+a.registerlink:active {
+	background-color: #ebf0ff;
+}

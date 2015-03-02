@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block html_head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block content %}
+{% endblock %}{# content #}
+{#------------------------------------------------------------------------------------------------#}
+
+{% block sidebar %}
+
+<div class="sidebar-section">
+  <div class="title" >AFCP Chine</div>
+  <ul class="list">
+	<li {% if request.endpoint == "alumnisalon" %}class="current"{% endif %}><a href="/afcp/afcpchine/alumnisalon/">Alumni Salon</a></li>
+  </ul>
+</div>
+
+
+
+
+
+{% endblock %}{# sidebar #}
+
+
+
+
+

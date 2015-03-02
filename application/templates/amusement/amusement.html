@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+    amusement
+{% endblock %}
+
+{% block html_head %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+{% endblock %}{# html_head #}
+
+
+{% block header %}
+{% endblock %}{# header #}
+
+
+{% block content %}
+{% endblock %}{# content #}
+
+{% block sidebar %}
+
+    <div class="sidebar-section">
+	<div class="title" >Loisirs</div>
+	<ul class="list">
+	    
+	    <li {% if request.endpoint == "bal" %}class="current"{% endif %}><a href="{{ url_for('bal') }}">Bal Chic à la Chinoise</a></li>
+	    <li {% if request.endpoint == "gala" %}class="current"{% endif %}><a href="{{ url_for('gala') }}">Gala de la Lune</a></li>
+	</ul>
+    </div>
+
+{% endblock %}{# sidebar #}
+
+
+
+
+

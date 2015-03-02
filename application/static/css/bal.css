@@ -1,0 +1,16 @@
+.section h2 {
+	text-align: left;
+}
+
+.section .noborder td:first-child {
+	width: 8em;
+}
+
+.section .bold {
+	font-weight: bold;
+	color: #0070c0;
+}
+
+.section .u {
+	text-decoration: underline;
+}
