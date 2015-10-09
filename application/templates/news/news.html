@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block html_title %}News{% endblock %}
+
+{% block html_head %}
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+
+    <script>
+     function markCurrentEntry() {
+	 $("#entry_{{ request.endpoint }}").addClass("current");
+     };
+     $(document).ready( function() { markCurrentEntry(); } );
+    </script>
+
+{% endblock %}{# html_head #}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{% block content %}
+{% endblock %}{# content #}
+
+{% block sidebar %}
+
+    <div class="sidebar-section">
+	<div class="title" >News</div>
+	<ul class="list">
+	    <li id="entry_huawei">
+		<a href="{{ url_for('huawei') }}">Huawei</a>
+	    </li>
+	</ul>
+    </div>
+
+{% endblock %}{# sidebar #}

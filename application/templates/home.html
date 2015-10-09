@@ -14,8 +14,8 @@
 {% block header %}
     {% set header = url_for('static', filename="img/header_gala2014.jpg") %}
 
-    <div title="Page du Gala de la Lune" class="banner-image" style="background: url('/static/img/header_gala2014.jpg') no-repeat center">
-	<!-- <a class="subscribe" target="_blank" href="http://form.jotformpro.com/form/32573239309962">Inscrivez-vous !</a> -->
+    <div title="Page du Gala de la Lune" class="banner-image" style="background: url('/static/doc/gala/gala2015.jpg') no-repeat center">
+	<!-- <a class="subscribe" target="_blank" href="http://www.jotformeu.com/form/52504218544350">Inscrivez-vous !</a> -->
     </div>
 {% endblock %}{# header #}
 
@@ -27,7 +27,7 @@
 
 	    <div id="announcements" class="block">
 		<div class="block-title">
-		    <a href="/afcp/static/about/"> "À propos de l'AFCP"</a>
+		    <a href="{{ url_for('about') }}"> "À propos de l'AFCP"</a>
 		</div>
 
 		<p>
@@ -43,7 +43,7 @@
 		    effectuer des stages ou y travailler... </p>
 
 		<div class="block-footer">
-		    <a href="/afcp/static/about/">"Details de l'AFCP"</a>
+		    <a href="{{ url_for('about') }}">"Details de l'AFCP"</a>
 		</div>
 
 	    </div>
@@ -52,28 +52,37 @@
 	    <div id="ecoles" class="block">
 		<div class="block-title">"Les activités de l'AFCP"</div>
 
-
+		<h3>
+		  华为2015年法国留学生专场招聘会
+		</h3>
+		<p>
+		  Rendez-vous sur <a href="{{ url_for('huawei') }}">la page de detail</a>.
+		</p>
 		<h3>Table ronde</h3>
 		<p>
 		    Une table ronde d'échange entre les élèves et anciens élèves de
 		    ParisTech est organisée par l'AFCP. Pour plus de détail, rendez-vous
-		    <a href="/afcp/misc/roundtable/">sur la page de présentation
+		    <a href="{{ url_for('seminaire') }}">sur la page de présentation
 			(en chinois)</a>.
 		</p>
 
 
-
 		<div class="block-footer">
-		    <a href="/afcp/static/about/activities/">
+		    <a href="{{ url_for('activities') }}">
 			"Plus d'activités"</a>
 		</div>
 
+		<h3>Newsletter ParisTech China</h3>
+		<p>
+		  Rendez-vous sur <a href="{{ url_for('newsletter') }}">la page de detail</a>.
+		</p>
+		{#
 		<h3>Assemblée Générale 2014</h3>
 		<p>
 		    Assemblée Générale 2014 de l’Association amicale Franco-Chinoise de ParisTech.
-		    Rendez-vous sur <a href="/afcp/news">la page de detail</p>.
+		    Rendez-vous sur <a href="{{ url_for('news') }}">la page de detail</p>.
 		</p>
-		
+		#}
 	    </div>
 
 	</div>
@@ -141,7 +150,7 @@
 			    <td><img
 				src="http://groups.google.fr/intl/fr/images/logos/groups_logo_sm.gif"
 height=30 width=151 alt="Google Groupes"></td>
-			    
+
 			</tr>
 			<tr>
 			    <td>

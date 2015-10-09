@@ -27,6 +27,7 @@
     <li {% if request.endpoint == "training" %}class="current"{% endif %}><a href="{{ url_for('training') }}">PPT+Excel Training</a></li>
     <li {% if request.endpoint == "workpermit" %}class="current"{% endif %}><a href="{{ url_for('workpermit') }}">Working Permit</a></li>
     <li {% if request.endpoint == "alumni" %}class="current"{% endif %}><a href="{{ url_for('alumni_research') }}">Alumni Research 2014</a></li>
+    <li {% if request.endpoint == "newsletter" %}class="current"{% endif %}><a href="{{ url_for('newsletter') }}">Newsletter</a></li>
   </ul>
 </div>
 

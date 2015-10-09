@@ -30,6 +30,11 @@ def home():
     return render_template("home.html")
 
 
+@app.route('/afcp/')
+def afcp():
+    return redirect(url_for("home"))
+
+
 @app.route('/setlocale/<locale>')
 def setlocale(locale):
     session['locale'] = locale
@@ -69,8 +74,11 @@ def candidates():
 
 @app.route("/news")
 def news():
-    return render_template("news.html")
+    return redirect(url_for("huawei"))
 
+@app.route("/news/huawei")
+def huawei():
+    return render_template("news/huawei.html")
 
 @app.route("/amusement")
 def amusement():
@@ -103,6 +111,10 @@ def workpermit():
 @app.route("/research/alumni")
 def alumni_research():
     return render_template("research/alumni.html")
+
+@app.route("/research/newsletter")
+def newsletter():
+    return render_template("research/newsletter.html")
 
 @app.route("/afcpchine")
 def afcpchine():
